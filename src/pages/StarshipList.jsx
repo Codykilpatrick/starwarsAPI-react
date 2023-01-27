@@ -1,5 +1,6 @@
 import { getStarshipList } from "../services/sw-api"
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 
 const StarshipList = () =>{
@@ -18,13 +19,14 @@ const StarshipList = () =>{
       <h3>STARSHIPS</h3>
       {starshipList?
       <>
-      <container id="starship-container">
+      <div id="starship-container">
         {starshipList.map(starship =>
           <div key={starship.name} className='starship-el'>
-            {starship.name}
+            <Link to='/starship' state={starship}>
+            {starship.name}</Link>
           </div>  
         )}
-        </container>
+        </div>
       </> 
       :
       <h4>Loading spaceships</h4>
