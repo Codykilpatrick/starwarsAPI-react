@@ -16,13 +16,15 @@ const StarshipList = () =>{
   return (
     <>
       <h3>STARSHIPS</h3>
-      {starshipList ?
+      {starshipList?
       <>
+      <container id="starship-container">
         {starshipList.map(starship =>
-          <div key={starship.name}>
+          <div key={starship.name} className='starship-el'>
             {starship.name}
           </div>  
         )}
+        </container>
       </> 
       :
       <h4>Loading spaceships</h4>
